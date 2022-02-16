@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+    {{ include('./partials/_navbar.html.twig') }}
+    <div class="container">
+        <h2>Nouveau mémo</h2>
+        {{ form_start(form) }}
+
+            {{ form_row(form.content) }}
+            {{ form_row(form.deletedTime) }}
+            
+            <button class="btn btn-primary">Créer</button>
+            
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

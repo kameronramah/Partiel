@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tous les mémos{% endblock %}
+
+{% block body %}
+    {{ include('./partials/_navbar.html.twig') }}
+    <div class="container">
+
+        <div class="row">
+            {% for memo in memos %}
+                <h4>Mémo {{ memo.id }}</h4>
+                <a href="/memo/{{ memo.id}}">Voir le mémo</a>
+            {% endfor %}
+        </div>
+
+    </div>
+    
+{% endblock %}

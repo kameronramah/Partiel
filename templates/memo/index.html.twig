@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mémo {{ memo.id }} {% endblock %}
+
+{% block body %}
+    {{ include('./partials/_navbar.html.twig') }}
+    <div class="container">
+        <h2>Mémo {{ memo.id }} </h2>
+        <br>
+        <h4>Contenu : </h4>
+        <p>{{ memo.content }}</p>
+        <h4>Heure d'expiration : </h4>
+        <p>{{ memo.deletedTime|date("H:i")}}</p>
+        <h4>Lien vers ce mémo : </h4>
+        <a href="/memo/{{ memo.id}}">http://localhost:8000/memo/{{ memo.id }}</a>
+    </div>
+    
+{% endblock %}
